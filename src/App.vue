@@ -11,6 +11,7 @@
 import TheHeader from './components/layout/TheHeader'
 import Todos from './components/Todos'
 import AddTodo from './components/AddTodo'
+import axios from 'axios'
 
 export default {
   name: 'app',
@@ -21,11 +22,7 @@ export default {
   },
   data() {
     return {
-      todos: [
-        {id: 1, title: "clean x y z", completed: false },
-        {id: 2, title: "clean MORE x y z a b c", completed: true },
-        {id: 3, title: "clean EVENT MORE x y z a b c d e f g h j k l m n o p q r s t u v w", completed: false },
-      ]
+      todos: []
     }
   },
   methods: {
@@ -35,6 +32,11 @@ export default {
     addTodo(newTodo) {
       this.todos = [...this.todos, newTodo];
     }
+  },
+  created() {
+    axios.get('https://jsonplaceholder.typicode.com/todos?_limit=10')
+      .then(res => this.todos = res.data)
+      .catch(err => console.log(err))
   }
 }
 </script>

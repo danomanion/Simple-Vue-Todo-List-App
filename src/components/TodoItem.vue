@@ -1,5 +1,6 @@
 <template lang="html">
-  <div class="">
+  <div class="todo-item">
+    {{ todo.id }}
     <h3
       v-text="todo.title"
       :class="{ 'is-completed' : todo.completed }"
