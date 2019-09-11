@@ -1,4 +1,4 @@
-# vue-crash-course-traversy-todo-app
+# Simple Vue Todo List App
 
 ## Project setup
 ```
