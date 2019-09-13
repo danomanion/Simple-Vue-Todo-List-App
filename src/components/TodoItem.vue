@@ -1,12 +1,16 @@
 <template lang="html">
-  <div class="todo-item">
-    {{ todo.id }}
-    <h3
-      v-text="todo.title"
-      :class="{ 'is-completed' : todo.completed }"
-      @click="completedToggle()"
-    />
-    <button @click="$emit('del-todo', todo.id)" class="delete-btn">🗑️ Delete</button>
+  <div class="collection-item">
+    <a>
+      <i class="material-icons">{{ checkBoxToggle() }}</i>
+    </a>
+    <div :class="{ 'is-completed' : todo.completed }" @click="completedToggle()">
+      <span class="title">{{ todo.title }}</span>
+    </div>
+    <div class="actions">
+      <a class="secondary-content" @click="$emit('del-todo', todo.id)">
+        <i class="material-icons">delete_forever</i>
+      </a>
+    </div>
   </div>
 </template>
 
@@ -17,34 +21,23 @@ export default {
   methods: {
     completedToggle: function() {
       this.todo.completed = !this.todo.completed;
+    },
+    checkBoxToggle: function() {
+      if (this.todo.completed == true) {
+        return 'check_box'
+      } else {
+        return 'check_box_outline_blank'
+      }
     }
   }
 }
 </script>
 
 <style lang="css" scoped>
-  h3 {
-    background-color: gold;
-    cursor: pointer;
-    margin-bottom: 3px;
-    padding: 10px 20px;
-  }
-
-  .is-completed {
-    text-decoration: line-through;
-  }
-
-  h3::before {
-    content: "☐";
-    padding-right: 20px;
-  }
-
-  h3.is-completed::before {
-    content: "☑️";
-  }
-
-  .delete-btn {
-    background-color: pink;
-    padding: 5px 8px;
-  }
+.material-icons {
+  cursor: pointer;
+}
+.is-completed {
+  background-color: red;
+}
 </style>

@@ -1,9 +1,9 @@
 <template lang="html">
-  <div>
-    <template v-for="todo in todos">
+  <section class="collection">
+    <template class="collection-item" v-for="todo in todos">
       <TodoItem :todo="todo" @del-todo="$emit('del-todo', todo.id)"/>
     </template>
-  </div>
+  </section>
 </template>
 
 <script>
