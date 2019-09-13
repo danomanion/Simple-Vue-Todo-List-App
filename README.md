@@ -1,5 +1,9 @@
 # Simple Vue Todo List App
 
+- Vue.js / Material Design based Todo List 
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/c6c711a9-fe9b-40ad-8540-02d9e22cadcb/deploy-status)](https://app.netlify.com/sites/simple-vue-todo/deploys)
+
 ## Project setup
 ```
 npm install
