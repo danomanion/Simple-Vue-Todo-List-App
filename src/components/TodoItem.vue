@@ -99,6 +99,9 @@ export default {
     }
   }
 }
+.title {
+  color: #4f4f4f;
+}
 .is-completed {
   .title {
     color: #caced6;
