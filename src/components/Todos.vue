@@ -19,4 +19,7 @@ export default {
 </script>
 
 <style lang="css" scoped>
+.collection {
+  border: none;
+}
 </style>

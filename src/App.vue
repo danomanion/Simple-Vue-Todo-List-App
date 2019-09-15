@@ -66,6 +66,10 @@ export default {
 </script>
 
 <style lang="scss">
+body {
+  font-family: 'Nunito Sans', sans-serif;
+}
+
 .card {
   margin-top: 35px;
 }
