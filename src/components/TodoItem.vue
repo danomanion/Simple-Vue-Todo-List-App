@@ -1,12 +1,12 @@
 <template lang="html">
-  <div class="collection-item">
-    <a>
+  <div class="collection-item row" @click="completedToggle()">
+    <a class="col s1">
       <i class="material-icons">{{ checkBoxToggle() }}</i>
     </a>
-    <div :class="{ 'is-completed' : todo.completed }" @click="completedToggle()">
+    <div class="col s10" :class="{ 'is-completed' : todo.completed }">
       <span class="title">{{ todo.title }}</span>
     </div>
-    <div class="actions">
+    <div class="actions col s1">
       <a class="secondary-content" @click="$emit('del-todo', todo.id)">
         <i class="material-icons">delete_forever</i>
       </a>
@@ -34,7 +34,10 @@ export default {
 </script>
 
 <style lang="css" scoped>
-.material-icons {
+/* .title {
+  padding-left: px;
+} */
+.collection-item {
   cursor: pointer;
 }
 .is-completed {
